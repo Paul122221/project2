@@ -1,4 +1,4 @@
-package com.paul.startclass.utils;
+package com.paul.startclass.utils.timedstatictics;
 
 import org.springframework.stereotype.Component;
 
@@ -24,7 +24,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author  Azarenko Paul
  */
 @Component
-public class TimedStatistics {
+public class TimedStatistics implements StatisticsServiceInterface {
 
     /**
      * Nested within the class is the inner class SecondStatistic, encapsulating the sum of 'x' and 'y' values,
@@ -54,7 +54,7 @@ public class TimedStatistics {
         }
 
         public double getAvgY() {
-            return count > 0 ? sumY / count : 0;
+            return count > 0 ? (double) sumY / count : 0;
         }
 
     }

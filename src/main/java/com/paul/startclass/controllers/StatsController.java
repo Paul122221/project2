@@ -1,7 +1,8 @@
 package com.paul.startclass.controllers;
 
 
-import com.paul.startclass.utils.TimedStatistics;
+import com.paul.startclass.utils.timedstatictics.StatisticsServiceInterface;
+import com.paul.startclass.utils.timedstatictics.TimedStatistics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,11 +31,11 @@ import java.math.BigDecimal;
 public class StatsController {
 
     @Autowired
-    public StatsController(TimedStatistics timedStatistics) {
+    public StatsController(StatisticsServiceInterface timedStatistics) {
         this.timedStatistics = timedStatistics;
     }
 
-    TimedStatistics timedStatistics;
+    StatisticsServiceInterface timedStatistics;
 
     /*
      * Implementation notes.
